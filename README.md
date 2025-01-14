@@ -46,7 +46,8 @@ These parameters are optional, but may be used to supply additional information 
 Please refer to [TeamCity Documentation](https://www.jetbrains.com/help/teamcity/command-line.html) for instructions on using command-line scripts as build steps.  In your Build Configuration, go to the Build Steps section and add a new Build Step.  Select "Command Line" as the runner. Make sure the step is set to execute _after_ the step that builds your application. Paste the following lines into the "Custom Script" section and modify as needed:
 
 ```bash
- wget -O zScan.sh https://raw.githubusercontent.com/Zimperium/zscan-plugin-teamcity/refs/heads/master/zScan_v1.sh
+ wget -O zScan.tar.gz https://github.com/Zimperium/zscan-plugin-gitlab/archive/refs/tags/v1.0.0.tar.gz
+ tar --strip-components=1 -xf zScan.tar.gz
  chmod +x zScan.sh
  ./zScan.sh
 ```
